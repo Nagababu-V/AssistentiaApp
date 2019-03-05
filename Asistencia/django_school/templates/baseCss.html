@@ -1,0 +1,74 @@
+<!-- base.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/base.css'%}">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/home.css'%}">
+</head>
+<body>
+<div class="wrapper">
+      <div class="container">
+          <h1></h1>
+          <body>
+                  <div class="row-1">
+                    <div class="col-6">
+                      <h1 class="logo">
+                        <a href="{% url 'home' %}">
+                          Asistencia
+                          {% if user.is_authenticated %}
+                            {% if user.is_teacher %}
+                              <span class="icon-feather" data-toggle="tooltip" data-placement="right" title="Teacher profile"></span>
+                            {% else %}
+                              <span class="icon-graduation-cap" data-toggle="tooltip" data-placement="right" title="Student profile"></span>
+                            {% endif %}
+                          {% endif %}
+                        </a>
+                      </h1>
+                    </div>
+                  </br>
+                    <div class="col-6 text-right">
+                      {% if user.is_authenticated %}
+
+                        <p class="pt-3"> <h2>Not <strong>{{ user.username }} ? </strong><a href="{% url 'logout' %}">Logout</a></h2> </p>
+                      {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-light" role="button"><h2>Log in</h2></a>
+                        <a href="{% url 'signup' %}" class="btn btn-primary" role="button"><h2>Sign up</h2></a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                          {{ message }}
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                      {% endfor %}
+                      {% block content %}
+                      {% endblock %}
+                    </div>
+                  </div>
+                  <footer>
+
+                  </footer>
+                </div>
+              </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+              $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+              })
+            </script>
+          </body>
+      </div>
+  </div>
+
+</body>
+</html>

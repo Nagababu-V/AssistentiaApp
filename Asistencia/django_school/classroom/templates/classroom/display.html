@@ -1,0 +1,17 @@
+<p>Users in DataBase are: </p>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>UserName</th>
+    <th>LastLogin</th>
+    {% for user in users %}
+      {%if user.is_student%}
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.last_login}}</td>
+        </tr>
+      {%endif%}
+    {% endfor %}
+</table>

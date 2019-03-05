@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+<p>
+</br>
+</p>
+<h1> SignUp as</h1>
+</br>
+  <a href="{% url 'student_signup' %}" class="btn btn-student btn-lg" role="button"><h2>Student</h2></a>
+  <h2>or</h2>
+  <a href="{% url 'teacher_signup' %}" class="btn btn-teacher btn-lg" role="button"><h2>Teacher</h2></a>
+{% endblock %}

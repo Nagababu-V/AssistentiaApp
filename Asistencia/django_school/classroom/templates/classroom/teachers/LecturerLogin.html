@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+</br>
+</br>
+  <p><h1> Hello <strong>{{ user.username }} </strong></h1></p>
+</br>
+<button type="button" onclick="window.location.href='/ClassDetailsToMark/' ">Attendance</button>
+<button type="button" onclick="window.location.href='/GetClassDetails/' ">GetDetails</button>
+</html>
+{% endblock %}
