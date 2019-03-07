@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<p>
+</br>
+<br>
+</p>
+<p><h2>EnterClassDetails : </h2></p>
+</br>
+<body>
+  <form action='/gpost_form_upload/'  method='POST'>{% csrf_token %}
+<input id="One" type="text" name="classID" required>
+<input type='submit' value='submit' onclick="window.location.href='/GGetStudentDetails/'" />
+</form>
+
+<form id="class" action='/GetAttendanceDetails/' method="GET">
+  <input type="text" name="classID" />
+<input type='submit' value='submit'/>
+</form>
+</body>
+
+
+</html>
+{% endblock %}

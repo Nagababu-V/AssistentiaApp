@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.forms import ModelForm
 from django.utils.html import escape, mark_safe
 
 
@@ -39,3 +40,9 @@ class MyModel(models.Model):
 	year=models.CharField(max_length=6,choices=Year_Choices,default=None)
 	department=models.CharField(max_length=6,choices=Dep_Choices,default=None)
 	section=models.CharField(max_length=6,choices=Sec_Choices,default=None)
+
+class DetailsForm(ModelForm):
+
+	class Meta:
+		model=MyModel
+		fields=['year','department','section']

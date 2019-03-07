@@ -38,3 +38,8 @@ class DetailsForm(ModelForm):
 	class Meta:
 		model=MyModel
 		fields=['year','department','section']
+
+
+
+class PostForm(forms.Form):
+    classID = forms.CharField(max_length=256)

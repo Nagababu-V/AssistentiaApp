@@ -2,29 +2,28 @@
 
 {% block content %}
 <html>
-<style>
-table {
-  width:100%;
+<p>
+</br>
+<br>
+</p>
+</br>
+<body>
+
+  Class ID: <input id="cid" type="text" name="classID" required>
+<input type='submit' value='submit' onclick="fun()" />
+
+<script>
+function fun() {
+
+  var inp = document.getElementById("cid");
+  var val=inp.value;
+  alert(val);
 }
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-table#t01 tr:nth-child(even) {
-  background-color: #eee;
-}
-table#t01 tr:nth-child(odd) {
- background-color: #fff;
-}
-table#t01 th {
-  background-color: black;
-  color: white;
-}
-</style>
+</script>
+
+</body>
+
+
 </br>
 <p><h1>AttendanceDetails of all Students is: </h1></p>
 </br>
@@ -38,6 +37,7 @@ table#t01 th {
         <tr>
           <td><h2>{{user.id}}</h2></td>
           <td><h2>{{user.username}}</h2></td>
+
           <td><h2>{{user.last_login}}</h2></td>
         </tr>
       {%endif%}

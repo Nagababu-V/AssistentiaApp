@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<p>
+</br>
+<br>
+</p>
+<p><h2>EnterClassDetails : </h2></p>
+</br>
+<body>
+
+  <form action='/tpost_form_upload/'  method='POST'>{% csrf_token %}
+  <input id="One" type="text" name="classID" required>
+<input type='submit' value='submit' onclick="window.location.href='/MarkAttendance/'" />
+</form>
+<script>
+function fun() {
+
+  var inp = document.getElementById("One");
+  '''alert(inp.value);'''
+
+}
+</script>
+
+
+</body>
+
+
+</html>
+{% endblock %}

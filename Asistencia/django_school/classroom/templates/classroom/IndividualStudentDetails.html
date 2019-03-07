@@ -32,18 +32,22 @@ table#t01 th {
 <p><h1>AttendanceDetails of <strong>{{ user.username }} </strong> is: </h1></p>
 </br>
 </br>
-<table style = "width:100%" >
+<table width=100%>
   <tr>
-    <th><h2>Id </h2></th>
-    <th ><h2>UserName</h2></th>
-    <th ><h2>LastLogin</h2></th>
+    <th><h2>Id</h2></th>
+    <th><h2>UserName</h2></th>
+    <th><h2>LastLogin</h2></th>
+    {% for user in users %}
       {%if user.is_student%}
         <tr>
-          <td ><h2>{{user.id}}</h2></td>
-          <td ><h2>{{user.username}}</h2></td>
-          <td ><h2>{{user.last_login}}</h2></td>
+          <td><h2>{{user.id}}</h2></td>
+          <td><h2>{{user.username}}</h2></td>
+
+          <td><h2>{{user.last_login}}</h2></td>
         </tr>
       {%endif%}
+    {% endfor %}
+  </h2>
 </table>
 
 </html>

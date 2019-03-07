@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
 
 {% block content %}
 <html>
@@ -7,7 +6,11 @@
 <br>
 </p>
 <p><h2>EnterClassDetails : </h2></p>
+{% for option in options %}
+<p>{{option.field}}</p>
+{% endfor %}
 </br>
+{{ form.as_p }}
 <button type="button" onclick="window.location.href='/MarkAttendance/' ">Submit</button>
 </html>
 {% endblock %}
