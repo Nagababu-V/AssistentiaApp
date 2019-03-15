@@ -33,8 +33,5 @@ class StudentSignUpForm(UserCreationForm):
         #student.interests.add(*self.cleaned_data.get('interests'))
         return user
 
-class DetailsForm(ModelForm):
-
-	class Meta:
-		model=MyModel
-		fields=['year','department','section']
+class PostForm(forms.Form):
+    classID = forms.CharField(max_length=256)

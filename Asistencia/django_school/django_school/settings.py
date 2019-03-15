@@ -119,6 +119,8 @@ AUTH_USER_MODEL = 'classroom.User'
 
 LOGIN_URL = 'login'
 
+#signup_URL='accounts/signup/'
+
 LOGOUT_URL = 'logout'
 
 LOGIN_REDIRECT_URL = 'home'

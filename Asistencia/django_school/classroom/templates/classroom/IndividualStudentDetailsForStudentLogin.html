@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 
+{% block content %}
 <html>
 
   <style>
@@ -35,35 +35,31 @@
 
   <p>
     </br>
-    <br>
+    </br>
   </p>
-
-  </br>
-  </br>
-
-  {% for user in users %}
 
   <p>
-    <h2>AttendanceDetails of Students of <strong>{{user.ClassId}}</strong> is: </h2>
+    <h1>Attendance Details of student is: </h1>
   </p>
 
   </br>
+  </br>
 
-  <table>
+  <table width=100%>
     <tr>
       <th><h2>Id</h2></th>
       <th><h2>UserName</h2></th>
       <th><h2>LastLogin</h2></th>
+        {%if user.is_student%}
           <tr>
             <td><h2>{{user.id}}</h2></td>
-            <td><h2>{{user.ClassId}}</h2></td>
+            <td><h2>{{user.username}}</h2></td>
 
-            <td><h2>{{user.RollNo}}</h2></td>
+            <td><h2>{{user.last_login}}</h2></td>
           </tr>
-      {% endfor %}
+        {%endif%}
     </h2>
   </table>
 
 </html>
-
 {% endblock %}

@@ -6,42 +6,128 @@
   padding: 0;
   font-weight: 300;
 }
+
+h1{
+           color:green;
+  /* for chrome and safari*/
+            -webkit-animation-duration: 1s;
+            -webkit-animation-name: slidein;
+
+            /*for firefox*/
+            -moz-animation-duration: 1s;
+            -moz-animation-name: slidein;
+
+              /* for opera*/
+            -o-animation-duration: 1s;
+            -o-animation-name: slidein;
+
+              /* Standard syntax*/
+            animation-duration: 1s;
+            animation-name: slidein;
+}
+@-webkit-keyframes slidein {
+           from {
+               margin-right: 0px;
+               width: 100%;
+           }
+
+           to {
+               margin-left: 10px;
+               width: 100%;
+           }
+       }
+
+@-moz-keyframes slidein {
+           from {
+               margin-right: 0px;
+               width: 100%;
+           }
+
+           to {
+               margin-left: 10px;
+               width: 100%;
+           }
+       }
+@-o-keyframes slidein {
+           from {
+               margin-right: 100px;
+               width: 300%;
+           }
+
+           to {
+               margin-left:10%;
+               width: 100%;
+           }
+       }
+@keyframes slidein {
+           from {
+               margin-right:100px;
+               width: 300%;
+           }
+
+           to {
+               margin-left:10px;
+               width: 100%;
+           }
+       }
+#Slection_page
+{
+ padding:40px;
+}
+#button {
+  background-color:green; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 body {
   font-family: 'Source Sans Pro', sans-serif;
-background-image:url(/static/images/vnr.jpeg);
+background-image:url('/static/img/back.jpg');
 background-repeat:no-repeat;
 background-size:100%;
-  color: white;
+  color:white;
   font-weight: 300;
+  overflow:hidden;
+overflow-y:auto;
 }
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  color:blue;
   font-weight: 300;
+  overflow:hidden;
+overflow-y:auto;
 }
 body :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   font-family: 'Source Sans Pro', sans-serif;
-background-image:url('{{ STATIC_URL }}/images/vnr.jpeg');
+background-image:url('/static/img/back.jpg');
 background-repeat:no-repeat;
 background-size:100%;
   color: white;
   opacity: 1;
   font-weight: 300;
     vertical-align: middle;
+    overflow:hidden;
+overflow-y:auto;
 
 }
 body ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  font-family: 'Source Sans Pro', sans-serif;
-background-image:url('{{ STATIC_URL }}/images/vnr.jpeg');
+font-family: 'Source Sans Pro', sans-serif;
+background-image:url('/static/img/back1.jpg');
 background-size:100%;
-    vertical-align: middle;
+vertical-align: middle;
 
  color: white;
   opacity: 1;
   font-weight: 300;
+  overflow:hidden;
+overflow-y:auto;
 }
 body :-ms-input-placeholder {
   /* Internet Explorer 10+ */
@@ -50,30 +136,35 @@ body :-ms-input-placeholder {
   font-weight: 300;
 }
 .wrapper {
-  background: #50a3a2;
-
+  background-color: black;
+padding:10% 0;
   /*background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);*/
   position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
-
+  overflow:hidden;
+  overflow-y:auto;
 }
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
           transform: translateY(85px);
 }
 .container {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
-  padding: 15% 0;
+  padding:-3% 0;
   height: 400px;
   text-align: center;
 }
 .container h1 {
+  color:green;
   font-size: 40px;
   font-weight: 200;
+  border-bottom:px solid;
+margin-bottom:5px
+ -webkit-animation: rightThenLeft 4s linear;
 }
 form {
   padding: 20px 0;
@@ -85,12 +176,12 @@ form input {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
   width: 250px;
-  border-radius: 3px;
-  padding: 10px 15px;
+  border-radius: 4px;
+  padding: 10px 25px;
   margin: 0 auto 10px auto;
   display: block;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   font-weight: 300;
 }

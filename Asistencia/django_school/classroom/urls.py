@@ -1,25 +1,16 @@
 from django.urls import include, path
-
+from classroom.views import *
 from .views import classroom, students, teachers
 
 urlpatterns = [
-    path('', classroom.home, name='home'),
-
-    path('display/', classroom.index, name='index'),
-    path('GetClassDetails/', classroom.ClassDetails),
-    path('GetAttendnaceDetails/', classroom.Details),
-    path('MarkAttendance/', classroom.MarkAttendance),
-    path('ClassDetailsToMark/', classroom.GetClassDetailsToMark),
-    path('allStudents/', classroom.AllStudents),
-    path('individualStudent/', classroom.IndividualStudent),
-    path('GetStudentDetails/', classroom.IndividualStudent),
-    #path('display/', classroom.index, name='index'),
-
-    path('students/', include(([
-        path('', students.StudentLogin.as_view()),
-    ], 'classroom'), namespace='students')),
-
-    path('teachers/', include(([
-        path('', teachers.TeachersLogin.as_view(), name='quiz_change_list'),
-    ], 'classroom'), namespace='teachers')),
+    path('', classroom.Intital_page, name='Intital_page'),
+    path('home/', classroom.home, name='home'),
+    path('tpost_form_upload/', classroom.Tpost_form_upload, name='Tpost_form_upload'),
+    path('GetAttendanceDetails/', classroom.Details),
+    path('individualStudent/', classroom.IndividualStudent, name='IndividualStudent'),
+    path('GetStudentDetails/', classroom.AllStudents),
+    path('GetStudentDetails1/', classroom.IndividualStudentForStudentLogin),
+    path('getDetails/oneStudent/', classroom.OneStudent),
+    path('getDetails/allStudents/', classroom.AllStudents1),
+    path('takeAttendance/tpost_form_upload/', classroom.TClassDetails),
 ]

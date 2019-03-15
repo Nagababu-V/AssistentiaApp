@@ -7,7 +7,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView
-
 from ..decorators import student_required
 from ..forms import StudentSignUpForm
 from ..models import Student, User

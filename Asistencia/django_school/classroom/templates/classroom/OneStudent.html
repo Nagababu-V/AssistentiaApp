@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+
+  <p>
+    </br>
+    <br>
+  </p>
+
+  <p>
+    <h2>Enter Student Id : </h2>
+  </p>
+
+  </br>
+
+  <body>
+      <form action='/individualStudent/'  method='POST'>{% csrf_token %}
+      <input id="One" type="text" name="classID" required>
+    </br>
+    <input type='submit' value='submit' />
+    </form>
+  </body>
+
+</html>
+{% endblock %}
